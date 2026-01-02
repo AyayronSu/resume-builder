@@ -1,7 +1,7 @@
-function GeneralInfo({ data, onClickInput }) {
+function GeneralInfo({ data, onChange, onSubmit }) {
     return (
-        <fieldset>
-            <legend>Personal Information</legend>
+        <form className="cv-form" onSubmit={(e) => { e.preventDefault(); onSubmit(); }}>
+            <h3>General Information</h3>
 
             <label htmlFor="name">Name:</label>
             <input
@@ -9,7 +9,7 @@ function GeneralInfo({ data, onClickInput }) {
                 name="name" 
                 placeholder="Aaron Sujana"
                 value={data.name}
-                onClick={onClickInput}
+                onChange={onChange}
             />
 
             <label htmlFor="email">Email:</label>
@@ -18,7 +18,7 @@ function GeneralInfo({ data, onClickInput }) {
                 name="email" 
                 placeholder="aarondsujana@gmail.com"
                 value={data.email}
-                onClick={onClickInput}
+                onChange={onChange}
             />
 
             <label htmlFor="phone">Phone Number:</label>
@@ -27,9 +27,11 @@ function GeneralInfo({ data, onClickInput }) {
                 name="phone" 
                 placeholder="+1 (512) XXX-XXXX"
                 value={data.phone}
-                onClick={onClickInput}
+                onChange={onChange}
             />
-        </fieldset>
+
+            <button type="submit">Submit</button>
+        </form>
     )
 }
 
