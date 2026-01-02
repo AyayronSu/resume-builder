@@ -29,8 +29,6 @@ function GeneralInfo({ data, onChange, onSubmit }) {
                 value={data.phone}
                 onChange={onChange}
             />
-
-            <button type="submit">Submit</button>
         </form>
     )
 }
